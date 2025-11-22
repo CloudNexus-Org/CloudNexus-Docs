@@ -20,15 +20,15 @@ const config: Config = {
   },
 
   // Set the production url of your site here
-  url: 'https://yash3148.github.io',
+  url: 'https://cloudnexus-org.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/Docusaurus/',
+  baseUrl: '/CloudNexus-Docs/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'yash3148', // Usually your GitHub org/user name.
-  projectName: 'Docusaurus', // Usually your repo name.
+  organizationName: 'cloudnexus-org', // Usually your GitHub org/user name.
+  projectName: 'CloudNexus-Docs', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
