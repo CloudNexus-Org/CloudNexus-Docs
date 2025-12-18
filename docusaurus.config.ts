@@ -80,29 +80,109 @@ const config: Config = {
       disableSwitch: false,
       respectPrefersColorScheme: false,
     },
+    // navbar: {
+    //   title: 'CloudNexus Docs',
+    //   logo: {
+    //     alt: 'CloudNexus Docs Logo',
+    //     src: 'img/cloudnexusorg_logo.jpeg',
+    //   },
+    //   items: [
+    //     {
+    //       type: 'docSidebar',
+    //       sidebarId: 'tutorialSidebar',
+    //       position: 'left',
+    //       label: 'Docs',
+    //     },
+    //     {to: '/blog', label: 'Blog', position: 'left'},
+    //     {
+    //       href: 'https://github.com/cloudnexus/cloudnexus-docs',
+    //       label: 'GitHub',
+    //       position: 'right',
+    //     },
+    //   ],
+    // },
+
     navbar: {
-      title: 'CloudNexus Docs',
-      logo: {
-        alt: 'CloudNexus Docs Logo',
-        src: 'img/cloudnexusorg_logo.jpeg',
-      },
-      items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Docs',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/cloudnexus/cloudnexus-docs',
-          label: 'GitHub',
-          position: 'right',
-        },
-      ],
+  title: 'CloudNexus Docs',
+  logo: {
+    alt: 'CloudNexus Docs Logo',
+    src: 'img/cloudnexusorg_logo.jpeg',
+  },
+  hideOnScroll: false,
+  // mobile: {
+  //   disable: true, // 🚀 disables hamburger menu and keeps full navbar visible on all screens
+  // },
+  items: [
+    {
+      type: 'docSidebar',
+      sidebarId: 'tutorialSidebar',
+      position: 'right',
+      label: 'Docs',
     },
+    {to: '/blog', label: 'Blog', position: 'right'},
+    {
+      href: 'https://github.com/cloudnexus/cloudnexus-docs',
+      label: 'GitHub',
+      position: 'right',
+    },
+  ],
+},
+
     footer: {
       style: 'dark',
+      links: [
+        {
+          title: 'Learn',
+          items: [
+            {
+              label: 'Getting Started',
+              to: '/docs/Ariba%20DevOps/getting-started',
+            },
+            {
+              label: 'DevOps Documentation',
+              to: '/docs/Ariba%20DevOps/intro',
+            },
+            {
+              label: 'Organizational Structure',
+              to: '/docs/CN%20Org%20Structure/organizational-structure',
+            },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
+            {
+              label: 'GitHub',
+              href: 'https://github.com/cloudnexus/cloudnexus-docs',
+            },
+            {
+              label: 'Blog',
+              to: '/blog',
+            },
+            {
+              label: 'Getting Started',
+              to: '/docs/Ariba%20DevOps/getting-started',
+            },
+          ],
+        },
+        {
+          title: 'More',
+          items: [
+            {
+              label: 'Blog',
+              to: '/blog',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/cloudnexus/cloudnexus-docs',
+            },
+            {
+              label: 'DevOps Docs',
+              to: '/docs/Ariba%20DevOps/getting-started',
+            },
+          ],
+        },
+      ],
       copyright: `Copyright © ${new Date().getFullYear()} CloudNexus, Inc. Built with Docusaurus.`,
     },
     prism: {

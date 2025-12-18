@@ -5,52 +5,89 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: ReactNode;
+  borderColor: string;
+  iconColor: string;
+  iconType: 'check' | 'plus' | 'diamond';
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Comprehensive Documentation',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Find everything you need in one place. Our documentation is designed to
-        help you get started quickly and find answers to your questions.
-      </>
-    ),
-  },
-  {
     title: 'Clear & Organized',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
         Well-structured content that makes it easy to navigate and find what
         you&apos;re looking for. Focus on learning, not searching.
       </>
     ),
+    borderColor: '#3b82f6',
+    iconColor: '#60a5fa',
+    iconType: 'check',
+  },
+  {
+    title: 'Everything You Need',
+    description: (
+      <>
+        Complete guides, tutorials, and API references all in one place for your convenience.
+      </>
+    ),
+    borderColor: '#a855f7',
+    iconColor: '#c084fc',
+    iconType: 'plus',
   },
   {
     title: 'Modern & Fast',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
         Built with modern web technologies for a fast, responsive experience
         that works seamlessly across all devices.
       </>
     ),
+    borderColor: '#14b8a6',
+    iconColor: '#5eead4',
+    iconType: 'diamond',
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
-  return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
+function FeatureIcon({type, color}: {type: 'check' | 'plus' | 'diamond'; color: string}) {
+  if (type === 'check') {
+    return (
+      <div className={styles.iconCircle} style={{backgroundColor: color}}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 6L9 17L4 12" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
       </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+    );
+  }
+  if (type === 'plus') {
+    return (
+      <div className={styles.iconSquare} style={{backgroundColor: color}}>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5V19M5 12H19" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+        </svg>
+      </div>
+    );
+  }
+  return (
+    <div className={styles.iconDiamond} style={{backgroundColor: color}}>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L22 12L12 22L2 12L12 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </div>
+  );
+}
+
+function Feature({title, description, borderColor, iconColor, iconType}: FeatureItem) {
+  return (
+    <div className={clsx('col col--12 col--md-4')}>
+      <div className={styles.featureCard} style={{borderTopColor: borderColor}}>
+        <div className={styles.featureIconWrapper}>
+          <FeatureIcon type={iconType} color={iconColor} />
+        </div>
+        <div className={styles.featureContent}>
+          <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
+          <p className={styles.featureDescription}>{description}</p>
+        </div>
       </div>
     </div>
   );

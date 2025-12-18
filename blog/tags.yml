@@ -17,3 +17,38 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+devops:
+  label: DevOps
+  permalink: /devops
+  description: DevOps practices and methodologies
+
+ci-cd:
+  label: CI/CD
+  permalink: /ci-cd
+  description: Continuous Integration and Continuous Deployment
+
+cloud-native:
+  label: Cloud Native
+  permalink: /cloud-native
+  description: Cloud-native development and architecture
+
+automation:
+  label: Automation
+  permalink: /automation
+  description: Automation tools and practices
+
+terraform:
+  label: Terraform
+  permalink: /terraform
+  description: Infrastructure as Code with Terraform
+
+infrastructure:
+  label: Infrastructure
+  permalink: /infrastructure
+  description: Infrastructure management and deployment
+
+cloud:
+  label: Cloud
+  permalink: /cloud
+  description: Cloud computing and services
